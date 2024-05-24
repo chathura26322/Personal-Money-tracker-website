@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="/Css/budget.css" />
+    <title>Budget Manager</title>
+  </head>
+  <body>
+  <body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="#">CoIn TrAcKeR</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto" id="navbar">
+          <div class="hori-selector">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html"><i class="fas fa-tachometer-alt"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><i class="far fa-address-book"></i>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="income.html"><i class="far fa-clone"></i>Incomes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="expenses.html"><i class="far fa-calendar-alt"></i>Expenses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="budget.html"><i class="far fa-chart-bar"></i>Budget Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h2 class="my-4">Budget Calculator</h2>
+      <div class="card mb-4">
+        <div class="card-body">
+          <form id="budgetForm">
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input type="text" class="form-control" id="category" required />
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="number" class="form-control" id="amount" required />
+            </div>
+            <div class="form-group">
+              <label for="type">Type</label>
+              <select class="form-control" id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Entry</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h4>Entries</h4>
+          <table class="table" id="entriesTable">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body" id="ëxportView">
+          <h4>Summary</h4>
+          <p id="totalIncome">Total Income: $0</p>
+          <p id="totalExpense">Total Expense: $0</p>
+          <p id="netBudget">Net Budget: $0</p>
+          <button class="btn btn-primary" id="generateReport">
+            Generate Report
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <section style="height: 100px;">
+      <footer class="text-center text-white" style="background-color: #044D40;">
+        <div class="container p-4 pb-0">
+          <section class="">
+            <p class="d-flex justify-content-center align-items-center">
+              <span class="me-3">Register for free</span>
+              <button type="button" class="btn btn-outline-light btn-rounded">
+                Sign up
+              </button>
+            </p>
+          </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2024 CoinTracker.com
+        </div>
+      </footer>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/budjet.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="/Js/budjet.js"></script>
+  </body>
+</html>

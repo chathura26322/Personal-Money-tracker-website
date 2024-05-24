@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="/Css/income.css" />
+    <title>Income Manager</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="#">CoIn TrAcKeR</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto" id="navbar">
+          <div class="hori-selector">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html"
+              ><i class="fas fa-tachometer-alt"></i>Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"
+              ><i class="far fa-address-book"></i>Dashboard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="income.html"
+              ><i class="far fa-clone"></i>Incomes</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="expenses.html"
+              ><i class="far fa-calendar-alt"></i>Expenses</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="budget.html"
+              ><i class="far fa-chart-bar"></i>Budget Calculator</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Login.html"
+              ><i class="fas fa-sign-out-alt"></i>Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h2 class="my-4">Income Manager</h2>
+      <div class="card mb-4">
+        <div class="card-body">
+          <form id="incomeForm">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" class="form-control" id="date" required />
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input type="text" class="form-control" id="category" required />
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="number" class="form-control" id="amount" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Entry</button>
+          </form>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h4>Entries</h4>
+          <div class="btn-group" role="group" aria-label="Time period">
+            <button
+              type="button"
+              id="dayButton"
+              class="btn btn-outline-primary"
+            >
+              Day
+            </button>
+            <button
+              type="button"
+              id="weekButton"
+              class="btn btn-outline-primary"
+            >
+              Week
+            </button>
+            <button
+              type="button"
+              id="monthButton"
+              class="btn btn-outline-primary"
+            >
+              Month
+            </button>
+          </div>
+          <table class="table" id="incomeTable">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Category</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <h4>Total Income : <span id="totalIncome">0</span></h4>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h4>Income Chart</h4>
+          <button
+            type="button"
+            id="generateChartButton"
+            class="btn btn-primary"
+          >
+            Generate Chart
+          </button>
+          <canvas id="incomeChart"></canvas>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h4>Income Report</h4>
+          <button
+            type="button"
+            id="generateReportButton"
+            class="btn btn-primary"
+          >
+            Generate Report
+          </button>
+          <div id="report"></div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <section style="height: 100px">
+      <footer class="text-center text-white" style="background-color: #044D40">
+        <div class="container p-4 pb-0">
+          <section class="">
+            <p class="d-flex justify-content-center align-items-center">
+              <span class="me-3">Register for free</span>
+              <button type="button" class="btn btn-outline-light btn-rounded">
+                Sign up
+              </button>
+            </p>
+          </section>
+        </div>
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+          © 2024 CoinTracker.com
+        </div>
+      </footer>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="/Js/income.js"></script>
+  </body>
+</html>

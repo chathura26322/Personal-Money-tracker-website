@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/Css/dashboard.css" />
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-custom navbar-mainbg">
+    <a class="navbar-brand navbar-logo" href="#">CoIn TrAcKeR</a>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto" id="navbar">
+        <div class="hori-selector">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" href="home.html"><i class="fas fa-tachometer-alt"></i>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.html"><i class="far fa-address-book"></i>Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="income.html"><i class="far fa-clone"></i>Incomes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="expenses.html"><i class="far fa-calendar-alt"></i>Expenses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="budget.html"><i class="far fa-chart-bar"></i>Budget Calculator</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Login.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-3 mb-4">
+        <div class="list-group">
+          <a href="dashboard.html" class="list-group-item list-group-item-action active">Summary</a>
+          <a href="income.html" class="list-group-item list-group-item-action">Income</a>
+          <a href="expenses.html" class="list-group-item list-group-item-action">Expenses</a>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6 mb-4">
+            <div class="card h-100 shadow-lg">
+              <div class="card-body text-center p-5">
+                <h4 class="card-title">Income</h4>
+                <p class="card-text display-4" id="incomeSummary">$1000</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6 mb-4">
+            <div class="card h-100 shadow-lg">
+              <div class="card-body text-center p-5">
+                <h4 class="card-title">Expenses</h4>
+                <p class="card-text display-4" id="expensesSummary">$890</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6 mb-4">
+            <div class="card h-100 shadow-lg">
+              <div class="card-body text-center p-5">
+                <h4 class="card-title">Budget</h4>
+                <p class="card-text display-4" id="budgetSummary">$80</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Income</h5>
+            <div class="d-flex justify-content-center">
+              <div class="chart-container" style="height: 40vh; width: auto; margin: auto">
+                <canvas id="incomeChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Expenses</h5>
+            <div class="d-flex justify-content-center">
+              <div class="chart-container" style="height: 40vh; width: auto; margin: auto">
+                <canvas id="expensesChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-lg-6 mb-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Budget</h5>
+            <div class="d-flex justify-content-center">
+              <div class="chart-container" style="height: 40vh; width: auto; margin: auto">
+                <canvas id="budgetChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <section style="height: 100px">
+    <footer class="text-center text-white" style="background-color: #035344  ">
+      <div class="container p-4 pb-0">
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-3">Register for free</span>
+            <button type="button" class="btn btn-outline-light btn-rounded">
+              Sign up
+            </button>
+          </p>
+        </section>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2024 CoinTracker.com
+      </div>
+    </footer>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/dashboard.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="/Js/dashboard.js"></script>
+</body>
+
+</html>
